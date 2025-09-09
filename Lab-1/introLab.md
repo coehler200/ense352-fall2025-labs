@@ -36,7 +36,7 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
         <li>72MHz Clock</li>
         <li>128kB Flash</li>
         <li>16kB SRAM</li>
-        <li>Documentation available on the GitHub site</li>
+        <li>Documentation available on URCourses</li>
     </td>
     <td> <img src="Nucleo.png"  alt="Nucleo" width = 279px height = 336px ></td>
   </tr>
@@ -148,7 +148,7 @@ The Program Counter (PC) is register R15. It contains the current program addres
 Notice that the ROM or Flash in our case is at 0x8000000 and the RAM is at 0x20000000.
 
 
-#### Application Program Status Register
+#### Application Program Status Register (PSR)
 
 The APSR contains the current state of the condition flags from previous instruction executions. The bit assignments are:
 <table>
