@@ -267,7 +267,7 @@ Reset_Handler	PROC
                                 
 
   MOV R0, #0x3355
-  PUSH {R0}  			; Notice the stack at 0x200000FF8  (Contains R1 then LR ) Little endian
+  PUSH {R0}  			; Notice the stack at 0x200000FF8 
   MOV32 r0, #0xDEADBEEF
   PUSH {R0}
   POP {R4}
@@ -310,7 +310,7 @@ function1  PROC
 
   ALIGN
 function2	PROC  ;Using this PROC and ENDP like curly braces 
-  PUSH 	{R1,LR}	  
+  PUSH 	{R1,LR}	  ;(Contains R1 then LR ) Little endian
   MOV   R1,#4
 		
 delay
@@ -348,7 +348,7 @@ vowelCount  PROC
 
 We have been introduced to a number of new assembly instructions:
 
-- BL - Branch with Link (Call a subroutine) and store the return address in the LR 2. B - Branch
+- BL - Branch with Link (Call a subroutine) and store the return address in the LR
 - BX LR - Return from a subroutine.
 - PUSH Reg.. - Push multiple Registers to the stack
 - POP Reg.. - Pop multiple Registers from the stack.
