@@ -310,7 +310,7 @@ function1  PROC
 
   ALIGN
 function2	PROC  ;Using this PROC and ENDP like curly braces 
-  PUSH 	{R1,LR}	  ;(Contains R1 then LR ) Little endian
+  PUSH 	{R1,LR}	  ;(Contains LR then R1 ) Little endian
   MOV   R1,#4
 		
 delay
