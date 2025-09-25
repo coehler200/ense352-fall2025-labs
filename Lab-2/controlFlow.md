@@ -121,14 +121,14 @@ delay_loop            ; This is a loop ... NOT a SUBROUTINE
 
 Delay	PROC           ; Delay is the name of the subroutine.
   
-  PUSH R1            ; I am using R1 so I should push it to the stack.  
+  PUSH {R1}            ; I am using R1 so I should push it to the stack.  
   MOV 	R1,#4
 
 delay_loop
   SUBS	R1, #1
   BNE	delay_loop
   
-  POP R1
+  POP {R1}
   BX  LR	
 
       
