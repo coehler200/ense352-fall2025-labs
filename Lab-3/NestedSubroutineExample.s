@@ -10,7 +10,7 @@
 	thumb
 
 ;;; Equates
-end_of_stack	equ 0x20001000			;Allocating 4kB of memory for the stack
+end_of_stack	equ 0x20002000
 RAM_START		equ	0x20000000
 
 
@@ -21,7 +21,7 @@ RAM_START		equ	0x20000000
 
 	area vector_table, data, readonly
 __Vectors
-	DCD	0x20002000		; initial stack pointer value
+	DCD	end_of_stack		; initial stack pointer value
 	DCD	Reset_Handler	; program entry point
 	export __Vectors
 
@@ -90,7 +90,9 @@ normalSub	PROC
 	push {LR}  ;  uncomment to show how we need to save the LR when we are nesting 
 							;  subroutine calls
 	bl nestedSub
+	
 	pop {LR}   ;  uncomment for above
+	
 	pop {R1,R2,R3}
 	BX LR
 	ENDP
