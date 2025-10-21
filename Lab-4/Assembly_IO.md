@@ -71,19 +71,19 @@ RCC_APB2ENR	EQU	0x40021018	    ; APB2 Peripheral Clock Enable Register
 GPIOC_CRH	EQU	0x40011004    ;  Port Configuration Register for Px15 -> Px8
 
 
-Ex : Writing to a register
+; Ex : Writing to a register
 LDR	R6, = RCC_APB2ENR	; R6 will contain the address of the register
 MOV	R0, #0x001C	; Set these bits for whatever reason
 STR	R0, [R6]
 
 
 
-Ex: Reading from a register and storing it  into an ARM register (R0)
+; Ex: Reading from a register and storing it  into an ARM register (R0)
 LDR	R6, = GPIOC_CRH	    ; CRH determines gpio pins 8-15
 LDR	R0,[R6]
 
 
-Ex : Writing to a register without affecting bits I do not care about
+; Ex : Writing to a register without affecting bits I do not care about
 LDR	R6, = RCC_APB2ENR	; R6 will contain the address of the register
 LDR	R0,[R6]
 ORR	R0, #0x001C	; Set these bits for whatever reason
